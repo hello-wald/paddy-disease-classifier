@@ -1,0 +1,10 @@
+data_panen
+.DS_Store
+dataset
+mlruns
+data
+__pycache__
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*$py.class
