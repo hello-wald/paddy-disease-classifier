@@ -159,13 +159,13 @@ with right:
         )
         .properties(height=300)
     )
-    st.altair_chart(chart, use_container_width=True)
+    st.altair_chart(chart, width="stretch")
 
     # Table
     st.subheader("📋 Probability Table")
     st.dataframe(
         df_sorted.style.format({"Probability": "{:.3f}"}),
-        use_container_width=True
+        width="stretch",
     )
 
 
