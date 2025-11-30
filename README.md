@@ -2,8 +2,6 @@
 
 A deep learning application for classifying rice leaf diseases using a fine-tuned EfficientNet-B4 model. Upload an image of a rice leaf and get instant predictions with confidence scores.
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://paddy-disease-classifier.streamlit.app)
-
 ## 🎯 Supported Diseases
 
 The model can identify the following paddy leaf conditions:
@@ -50,7 +48,7 @@ paddy-disease-classifier/
 -   **Backbone**: EfficientNet-B4 (pretrained on ImageNet)
 -   **Classifier Head**: Custom fully connected layers
     -   Linear(1792 → 512) → GELU → Linear(512 → 3)
--   **Loss Function**: Focal Loss (α=1, γ=2) for handling class imbalance
+-   **Loss Function**: Focal Loss (α=1, γ=2) for handling hard edge cases
 -   **Input Size**: 224×224 RGB images
 -   **Normalization**: ImageNet mean/std
 
