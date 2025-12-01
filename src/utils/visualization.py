@@ -26,7 +26,7 @@ def plot_training_history(train_losses, val_losses, train_accuracies, val_accura
     
     plt.tight_layout()
     
-    training_history_path = "graphs/training_history.png"
+    training_history_path = "../../outputs/plots/training_history.png"
     plt.savefig(training_history_path, dpi=300, bbox_inches='tight')
     mlflow.log_artifact(training_history_path)
     
@@ -40,7 +40,7 @@ def plot_confusion_matrix(cm, class_names):
     plt.xlabel('Predicted')
     plt.ylabel('Actual')
     
-    confusion_matrix_path = "graphs/confusion_matrix.png"
+    confusion_matrix_path = "../../outputs/plots/confusion_matrix.png"
     plt.savefig(confusion_matrix_path, dpi=300, bbox_inches='tight')
     mlflow.log_artifact(confusion_matrix_path)
     

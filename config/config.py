@@ -3,10 +3,10 @@
 import torch
 
 # Path configuration
-TRAIN_DATA_DIR = './dataset/train'
-TEST_DATA_DIR = './dataset/test'
-MODEL_SAVE_PATH = 'best_rice_disease_model.pth'
-GRAPH_DIR = 'graphs'
+TRAIN_DATA_DIR = './data/raw/train'
+TEST_DATA_DIR = './data/raw/test'
+MODEL_SAVE_PATH = './outputs/models/best_rice_disease_model.pth'
+GRAPH_DIR = './outputs/plots/'
 
 # Training parameters
 BATCH_SIZE = 32

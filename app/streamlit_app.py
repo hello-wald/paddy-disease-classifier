@@ -8,9 +8,9 @@ from PIL import Image, UnidentifiedImageError
 import pandas as pd
 import altair as alt
 
-from modelling.models.classifier import Classifier
+from src.model import Classifier
 from modelling.utils.transforms import get_transforms
-import modelling.config as config
+import config.config as config
 
 
 # -----------------------------------------------------------------------
@@ -35,7 +35,7 @@ def load_model():
         use_pretrained=False,
     )
     weights = torch.load(
-        os.path.join("modelling", config.MODEL_SAVE_PATH),
+        config.MODEL_SAVE_PATH,
         map_location="cpu"
     )
     model.load_state_dict(weights)

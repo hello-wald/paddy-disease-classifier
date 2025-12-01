@@ -8,20 +8,19 @@ from torch.utils.data import random_split, Subset
 import mlflow
 mlflow.set_tracking_uri("file:./mlruns")
 from torch.utils.data import DataLoader
-import matplotlib.pyplot as plt
 from PIL import Image
 import warnings
 warnings.filterwarnings("ignore")
 
 # Import modules
-from models.classifier import Classifier
-from data.dataset import RiceDiseaseDataset
-from utils.transforms import get_transforms
-from utils.losses import FocalLoss
-from utils.visualization import plot_training_history, plot_confusion_matrix
-from training.trainer import train_model
-from training.evaluator import evaluate_model, prepare_model_signature
-import config
+from .model import Classifier
+from .data_loader import RiceDiseaseDataset
+from .utils.transforms import get_transforms
+from .utils.losses import FocalLoss
+from .utils.visualization import plot_training_history, plot_confusion_matrix
+from .train import train_model
+from .evaluate import evaluate_model, prepare_model_signature
+from config import config
 
 # Make sure the graphs directory exists
 os.makedirs(config.GRAPH_DIR, exist_ok=True)
