@@ -26,7 +26,7 @@ def plot_training_history(train_losses, val_losses, train_accuracies, val_accura
     
     plt.tight_layout()
     
-    training_history_path = "../../outputs/plots/training_history.png"
+    training_history_path = "./outputs/plots/training_history.png"
     plt.savefig(training_history_path, dpi=300, bbox_inches='tight')
     mlflow.log_artifact(training_history_path)
     
