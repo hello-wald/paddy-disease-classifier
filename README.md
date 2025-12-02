@@ -21,7 +21,7 @@ Try the app here: **[Paddy Disease Classifier](https://paddy-doc.streamlit.app)*
 ```
 paddy-disease-classifier/
 ├── app/
-│   ├── streamlit_app.py      # Streamlit web application
+│   ├── streamlit_app.py      # Streamlit web app
 │   ├── requirements.txt      # Minimal dependencies for deployment
 │   └── __init__.py
 ├── src/
@@ -47,7 +47,7 @@ paddy-disease-classifier/
 │   ├── plots/                # Training history & confusion matrix
 │   └── logs/                 # Training logs
 ├── notebooks/                # EDA notebooks
-├── report/                   # Reference materials
+├── report/                   # Report
 ├── mlruns/                   # MLflow experiment tracking
 ├── requirements.txt          # Full project dependencies
 ├── mlflow_utils.py           # MLflow tracking utilities
