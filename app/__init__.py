@@ -15,3 +15,12 @@ __all__ = [
     "RiceDiseaseDataset",
     "config",
 ]
+
+def train_model(*args, **kwargs):
+    return _lazy_import_train()(*args, **kwargs)
+
+def evaluate_model(*args, **kwargs):
+    return _lazy_import_evaluate()[0](*args, **kwargs)
+
+def prepare_model_signature(*args, **kwargs):
+    return _lazy_import_evaluate()[1](*args, **kwargs)
