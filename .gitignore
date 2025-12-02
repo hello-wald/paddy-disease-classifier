@@ -1,6 +1,6 @@
 data_panen
 .DS_Store
-data
+data/raw/
 mlruns
 __pycache__
 
