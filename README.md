@@ -165,23 +165,6 @@ The application automatically detects and uses:
 -   **NVIDIA GPU**: CUDA
 -   **CPU**: Fallback for deployment
 
-## 📦 Dependencies
-
-### Full Development (root `requirements.txt`)
--   `streamlit` - Web application framework
--   `torch` & `torchvision` - Deep learning
--   `pillow` - Image processing
--   `pandas` - Data manipulation
--   `altair` - Interactive visualizations
--   `matplotlib` & `seaborn` - Visualization
--   `mlflow` - Experiment tracking
--   `tqdm` - Progress bars
--   `scikit-learn` - Model evaluation
--   `numpy` - Numerical computing
-
-### Minimal Deployment (`app/requirements.txt`)
-Minimal dependencies for running the Streamlit app only (used for cloud deployments).
-
 ## 📄 License
 
 This project is licensed under the terms specified in the [LICENSE](LICENSE) file.

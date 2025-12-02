@@ -39,13 +39,13 @@ From the combined datasets, only three disease classes were selected for this pr
 ```
 data/processed/
 ├── train/
-│   ├── Bacterial Blight/    # ~631 images
-│   ├── Brown Spot/          # ~944 images
-│   └── Rice Blast/          # ~920 images
+│   ├── Bacterial Blight/    # 631 images
+│   ├── Brown Spot/          # 944 images
+│   └── Rice Blast/          # 920 images
 └── test/
-    ├── Bacterial Blight/    # Test images
-    ├── Brown Spot/          # Test images
-    └── Rice Blast/         # ~120 images
+    ├── Bacterial Blight/    # 134 images
+    ├── Brown Spot/          # 112 images
+    └── Rice Blast/         # 120 images
 ```
 
 ## Dataset Statistics
@@ -59,9 +59,9 @@ data/processed/
 
 ### Test Set
 
-- **Bacterial Blight**: ~134 images
-- **Brown Spot**: ~112 images
-- **Rice Blast**: ~120 images
+- **Bacterial Blight**: 134 images
+- **Brown Spot**: 112 images
+- **Rice Blast**: 120 images
 - **Total Test Images**: 366 images
 
 ## Image Characteristics
