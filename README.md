@@ -39,7 +39,7 @@ paddy-disease-classifier/
 │   ├── config.py             # Model & training configuration
 │   └── __init__.py
 ├── data/
-│   └── raw/
+│   └── processed/
 │       ├── train/            # Training images by class
 │       └── test/             # Test images by class
 ├── outputs/

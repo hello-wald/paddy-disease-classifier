@@ -37,7 +37,7 @@ From the combined datasets, only three disease classes were selected for this pr
 ## Dataset Structure
 
 ```
-data/raw/
+data/processed/
 ├── train/
 │   ├── Bacterial Blight/    # ~631 images
 │   ├── Brown Spot/          # ~944 images
