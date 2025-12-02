@@ -20,27 +20,39 @@ Try the app here: **[Paddy Disease Classifier](https://paddy-doc.streamlit.app)*
 
 ```
 paddy-disease-classifier/
-├── streamlit_app.py          # Streamlit web application
-├── requirements.txt          # Python dependencies
-├── mlflow_utils.py           # MLflow tracking utilities
-├── modelling/
-│   ├── config.py             # Model & training configuration
-│   ├── main.py               # Training pipeline
-│   ├── best_rice_disease_model.pth  # Trained model weights
-│   ├── models/
-│   │   └── classifier.py     # EfficientNet classifier architecture
-│   ├── data/
-│   │   └── dataset.py        # Custom dataset class
-│   ├── training/
-│   │   ├── trainer.py        # Training loop
-│   │   └── evaluator.py      # Model evaluation
+├── app/
+│   ├── streamlit_app.py      # Streamlit web application
+│   ├── requirements.txt      # Minimal dependencies for deployment
+│   └── __init__.py
+├── src/
+│   ├── model.py              # EfficientNet classifier architecture
+│   ├── data_loader.py        # Custom dataset class
+│   ├── train.py              # Training loop
+│   ├── evaluate.py           # Model evaluation
+│   ├── main.py               # Training pipeline entry point
 │   ├── utils/
 │   │   ├── transforms.py     # Image transforms
 │   │   ├── losses.py         # Focal loss implementation
 │   │   └── visualization.py  # Training plots
-│   └── graphs/               # Training history plots
-├── analysis/                 # EDA notebooks
-└── References/               # Reference materials
+│   └── __init__.py
+├── config/
+│   ├── config.py             # Model & training configuration
+│   └── __init__.py
+├── data/
+│   └── raw/
+│       ├── train/            # Training images by class
+│       └── test/             # Test images by class
+├── outputs/
+│   ├── models/               # Trained model weights
+│   ├── plots/                # Training history & confusion matrix
+│   └── logs/                 # Training logs
+├── notebooks/                # EDA notebooks
+├── report/                   # Reference materials
+├── mlruns/                   # MLflow experiment tracking
+├── requirements.txt          # Full project dependencies
+├── mlflow_utils.py           # MLflow tracking utilities
+├── LICENSE
+└── README.md
 ```
 
 ## 🛠️ Model Architecture
@@ -79,7 +91,7 @@ paddy-disease-classifier/
 4. **Run the Streamlit app**
 
     ```bash
-    streamlit run streamlit_app.py
+    streamlit run app/streamlit_app.py
     ```
 
 5. Open http://localhost:8501 in your browser
@@ -90,7 +102,7 @@ paddy-disease-classifier/
 conda create -n paddy python=3.12
 conda activate paddy
 pip install -r requirements.txt
-streamlit run streamlit_app.py
+streamlit run app/streamlit_app.py
 ```
 
 ## 🎓 Training
@@ -100,7 +112,7 @@ To train the model from scratch:
 1. **Prepare your dataset**
 
     ```
-    dataset/
+    data/raw/
     ├── train/
     │   ├── Bacterial Blight/
     │   ├── Brown Spot/
@@ -111,12 +123,11 @@ To train the model from scratch:
         └── Rice Blast/
     ```
 
-2. **Configure training parameters** in `modelling/config.py`
+2. **Configure training parameters** in `config/config.py`
 
 3. **Run training**
     ```bash
-    cd modelling
-    python main.py
+    python -m src.main
     ```
 
 Training uses:
@@ -148,12 +159,20 @@ The application automatically detects and uses:
 
 ## 📦 Dependencies
 
+### Full Development (root `requirements.txt`)
 -   `streamlit` - Web application framework
 -   `torch` & `torchvision` - Deep learning
 -   `pillow` - Image processing
 -   `pandas` - Data manipulation
 -   `altair` - Interactive visualizations
--   `mlflow` - Experiment tracking (training only)
+-   `matplotlib` & `seaborn` - Visualization
+-   `mlflow` - Experiment tracking
+-   `tqdm` - Progress bars
+-   `scikit-learn` - Model evaluation
+-   `numpy` - Numerical computing
+
+### Minimal Deployment (`app/requirements.txt`)
+Minimal dependencies for running the Streamlit app only (used for cloud deployments).
 
 ## 📄 License
 
