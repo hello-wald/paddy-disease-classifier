@@ -123,6 +123,14 @@ To train the model from scratch:
         └── Rice Blast/
     ```
 
+    > **Dataset Information**: This project uses a combined dataset from two sources:
+    > - [Kaggle: 20k Multi-Class Crop Disease Images](https://www.kaggle.com/datasets/jawadali1045/20k-multi-class-crop-disease-images)
+    > - [Paddy Doctor Dataset](https://paddydoc.github.io/dataset/)
+    > 
+    > The processed dataset is also available on [Hugging Face](https://huggingface.co/datasets/hello-wald/paddy-disease-classification) (2,861 images).
+    > 
+    > See [`data/README.md`](data/README.md) for detailed information about the dataset structure, sources, and statistics.
+
 2. **Configure training parameters** in `config/config.py`
 
 3. **Run training**
