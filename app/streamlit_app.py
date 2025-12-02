@@ -2,6 +2,15 @@ import os
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
 
+import sys
+from pathlib import Path
+
+project_root = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(project_root))
+
+if not (project_root / "src").exists():
+    raise RuntimeError(f"Could not find 'src' directory. Project root: {project_root}")
+
 import torch
 import streamlit as st
 from PIL import Image, UnidentifiedImageError
@@ -9,8 +18,8 @@ import pandas as pd
 import altair as alt
 
 from src.model import Classifier
-from modelling.utils.transforms import get_transforms
-import config.config as config
+from src.utils.transforms import get_transforms
+import config as config
 
 
 # -----------------------------------------------------------------------

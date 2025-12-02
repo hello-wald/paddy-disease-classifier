@@ -1,8 +1,7 @@
 data_panen
 .DS_Store
-dataset
-mlruns
 data
+mlruns
 __pycache__
 
 # Byte-compiled / optimized / DLL files

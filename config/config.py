@@ -1,12 +1,17 @@
 """Configuration parameters for rice disease classification"""
 
 import torch
+import platform
+from pathlib import Path
+
+# Get the project root directory
+PROJECT_ROOT = Path(__file__).parent.parent
 
 # Path configuration
-TRAIN_DATA_DIR = './data/raw/train'
-TEST_DATA_DIR = './data/raw/test'
-MODEL_SAVE_PATH = './outputs/models/best_rice_disease_model.pth'
-GRAPH_DIR = './outputs/plots/'
+TRAIN_DATA_DIR = PROJECT_ROOT / 'data' / 'raw' / 'train'
+TEST_DATA_DIR = PROJECT_ROOT / 'data' / 'raw' / 'test'
+MODEL_SAVE_PATH = PROJECT_ROOT / 'outputs' / 'models' / 'best_rice_disease_model.pth'
+GRAPH_DIR = PROJECT_ROOT / 'outputs' / 'plots'
 
 # Training parameters
 BATCH_SIZE = 32
@@ -24,7 +29,13 @@ ACTIVATION_FUNCTION = 'gelu'  # Options: 'relu', 'gelu'
 
 # Hardware configuration
 DEVICE = torch.device('mps' if torch.backends.mps.is_available() else 'cuda' if torch.cuda.is_available() else 'cpu')
-NUM_WORKERS = 4
+
+if platform.system() == 'Darwin':  # macOS
+    NUM_WORKERS = 0
+    USE_PERSISTENT_WORKERS = False
+else:
+    NUM_WORKERS = 4
+    USE_PERSISTENT_WORKERS = True
 
 # Focal Loss parameters
 FOCAL_LOSS_ALPHA = 1
