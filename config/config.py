@@ -24,7 +24,7 @@ REDUCE_LR_PATIENCE = 5
 NUM_CLASSES = 3
 MODEL_NAME = 'efficientnet_b4'
 CLASS_NAMES = ['Bacterial Blight', 'Brown Spot', 'Rice Blast']
-CLASSIFIER_UNITS = 512
+CLASSIFIER_UNITS = 256
 ACTIVATION_FUNCTION = 'gelu'  # Options: 'relu', 'gelu'
 
 # Hardware configuration
